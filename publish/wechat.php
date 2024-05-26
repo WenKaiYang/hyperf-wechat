@@ -12,23 +12,10 @@ declare(strict_types=1);
 use function Hyperf\Support\env;
 
 return [
-    'defaults' => [
-        /*
-         * 指定 API 调用返回结果的类型：array(default)/collection/object/raw/自定义类名
-         */
-        'response_type' => 'array',
-        // 日志
-        'log' => [
-            'default' => 'single',
-            'channels' => [
-                'single' => [
-                    'driver' => env('WECHAT_LOG_DRIVER', 'errorlog'),
-                    'level' => env('WECHAT_LOG_LEVEL', 'debug'),
-                    'path' => env('WECHAT_LOG_DRIVER', BASE_PATH . '/runtime/logs/hyperf.log'),
-                ],
-            ],
-        ],
+    // httpClient
+    'http_client' => [
     ],
+
     // 公众号
     'official_account' => [
         'default' => [

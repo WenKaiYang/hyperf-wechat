@@ -12,30 +12,177 @@ declare(strict_types=1);
 
 namespace Ella123\HyperfWechat;
 
+use EasyWeChat\Kernel\Exceptions\InvalidArgumentException;
+use EasyWeChat\MiniApp\Application as MiniAppApplication;
+use EasyWeChat\OfficialAccount\Application as OfficialAccountApplication;
+use EasyWeChat\OpenPlatform\Application as OpenPlatformApplication;
+use EasyWeChat\OpenWork\Application as OpenWorkApplication;
+use EasyWeChat\Pay\Application as PayApplication;
+use EasyWeChat\Work\Application as WorkApplication;
 use Hyperf\Context\ApplicationContext;
+use Hyperf\Contract\ConfigInterface;
+use Hyperf\Guzzle\ClientFactory;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\SimpleCache\CacheInterface;
 
 /**
  * Class EasyWechat.
- *
- * @method static \EasyWeChat\OfficialAccount\Application officialAccount(string|array $name = "default", array $config = [])
- * @method static \EasyWeChat\Work\Application work(string|array $name = "default", array $config = [])
- * @method static \EasyWeChat\MiniApp\Application miniApp(string|array $name = "default", array $config = [])
- * @method static \EasyWeChat\Pay\Application pay(string|array $name = "default", array $config = [])
- * @method static \EasyWeChat\OpenPlatform\Application openPlatform(string|array $name = "default", array $config = [])
- * @method static \EasyWeChat\OpenWork\Application openWork(string|array $name = "default", array $config = [])
  */
 class EasyWechat
 {
     /**
-     * @param mixed $functionName
-     * @param mixed $args
      * @throws ContainerExceptionInterface
+     * @throws InvalidArgumentException
      * @throws NotFoundExceptionInterface
      */
-    public static function __callStatic($functionName, $args)
+    public static function officialAccount(string $name = 'default', array $config = []): OfficialAccountApplication
     {
-        return ApplicationContext::getContainer()->get(Factory::class)->{$functionName}(...$args);
+        // 容器
+        $container = ApplicationContext::getContainer();
+        // 配置
+        $config = array_merge($container->get(ConfigInterface::class)
+            ->get('wechat.official_account.' . $name, []), $config);
+        // 实例化
+        $app = new OfficialAccountApplication($config);
+        // 设置缓存
+        $app->setCache($container->get(CacheInterface::class));
+        // 请求对象
+        $app->setRequest($container->get(ServerRequestInterface::class));
+        // 客户端
+        $app->setClient($container->get(ClientFactory::class)
+            ->create($container->get(ConfigInterface::class)
+                ->get('wechat.http_client', [])));
+
+        return $app;
+    }
+
+    /**
+     * @throws ContainerExceptionInterface
+     * @throws InvalidArgumentException
+     * @throws NotFoundExceptionInterface
+     */
+    public static function openPlatform(string $name = 'default', array $config = []): OpenPlatformApplication
+    {
+        // 容器
+        $container = ApplicationContext::getContainer();
+        // 配置
+        $config = array_merge($container->get(ConfigInterface::class)
+            ->get('wechat.official_account.' . $name, []), $config);
+        // 实例化
+        $app = new OpenPlatformApplication($config);
+        // 设置缓存
+        $app->setCache($container->get(CacheInterface::class));
+        // 请求对象
+        $app->setRequest($container->get(ServerRequestInterface::class));
+        // 客户端
+        $app->setClient($container->get(ClientFactory::class)
+            ->create($container->get(ConfigInterface::class)
+                ->get('wechat.http_client', [])));
+
+        return $app;
+    }
+
+    /**
+     * @throws ContainerExceptionInterface
+     * @throws InvalidArgumentException
+     * @throws NotFoundExceptionInterface
+     */
+    public static function miniApp(string $name = 'default', array $config = []): MiniAppApplication
+    {
+        // 容器
+        $container = ApplicationContext::getContainer();
+        // 配置
+        $config = array_merge($container->get(ConfigInterface::class)
+            ->get('wechat.official_account.' . $name, []), $config);
+        // 实例化
+        $app = new MiniAppApplication($config);
+        // 设置缓存
+        $app->setCache($container->get(CacheInterface::class));
+        // 请求对象
+        $app->setRequest($container->get(ServerRequestInterface::class));
+        // 客户端
+        $app->setClient($container->get(ClientFactory::class)
+            ->create($container->get(ConfigInterface::class)
+                ->get('wechat.http_client', [])));
+
+        return $app;
+    }
+
+    /**
+     * @throws ContainerExceptionInterface
+     * @throws InvalidArgumentException
+     * @throws NotFoundExceptionInterface
+     */
+    public static function work(string $name = 'default', array $config = []): WorkApplication
+    {
+        // 容器
+        $container = ApplicationContext::getContainer();
+        // 配置
+        $config = array_merge($container->get(ConfigInterface::class)
+            ->get('wechat.official_account.' . $name, []), $config);
+        // 实例化
+        $app = new WorkApplication($config);
+        // 设置缓存
+        $app->setCache($container->get(CacheInterface::class));
+        // 请求对象
+        $app->setRequest($container->get(ServerRequestInterface::class));
+        // 客户端
+        $app->setClient($container->get(ClientFactory::class)
+            ->create($container->get(ConfigInterface::class)
+                ->get('wechat.http_client', [])));
+
+        return $app;
+    }
+
+    /**
+     * @throws ContainerExceptionInterface
+     * @throws InvalidArgumentException
+     * @throws NotFoundExceptionInterface
+     */
+    public static function openWork(string $name = 'default', array $config = []): OpenWorkApplication
+    {
+        // 容器
+        $container = ApplicationContext::getContainer();
+        // 配置
+        $config = array_merge($container->get(ConfigInterface::class)
+            ->get('wechat.official_account.' . $name, []), $config);
+        // 实例化
+        $app = new OpenWorkApplication($config);
+        // 设置缓存
+        $app->setCache($container->get(CacheInterface::class));
+        // 请求对象
+        $app->setRequest($container->get(ServerRequestInterface::class));
+        // 客户端
+        $app->setClient($container->get(ClientFactory::class)
+            ->create($container->get(ConfigInterface::class)
+                ->get('wechat.http_client', [])));
+
+        return $app;
+    }
+
+    /**
+     * @throws ContainerExceptionInterface
+     * @throws InvalidArgumentException
+     * @throws NotFoundExceptionInterface
+     */
+    public static function pay(string $name = 'default', array $config = []): PayApplication
+    {
+        // 容器
+        $container = ApplicationContext::getContainer();
+        // 配置
+        $config = array_merge($container->get(ConfigInterface::class)
+            ->get('wechat.official_account.' . $name, []), $config);
+        // 实例化
+        $app = new PayApplication($config);
+        // 请求对象
+        $app->setRequest($container->get(ServerRequestInterface::class));
+        // 客户端
+        $app->setClient($container->get(ClientFactory::class)
+            ->create($container->get(ConfigInterface::class)
+                ->get('wechat.http_client', [])));
+
+        return $app;
     }
 }

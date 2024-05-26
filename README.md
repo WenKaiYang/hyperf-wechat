@@ -58,11 +58,12 @@ class WeChatController extends AbstractController
     {
 
         $app = EasyWechat::officialAccount();
-        $app->server->push(function ($message) {
-            return "欢迎关注 EasyWechat！";
-        });
+        // 监听事件
+        $app->getServer()->addEventListener();
+        // 监听消息
+        $app->getServer()->addMessageListener();
         
-        return $app->server->serve();
+        return $app->getServer()->serve();
     }
 }
 ```
