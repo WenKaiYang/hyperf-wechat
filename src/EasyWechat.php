@@ -21,7 +21,6 @@ use EasyWeChat\Pay\Application as PayApplication;
 use EasyWeChat\Work\Application as WorkApplication;
 use Hyperf\Context\ApplicationContext;
 use Hyperf\Contract\ConfigInterface;
-use Hyperf\Guzzle\ClientFactory;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -72,10 +71,6 @@ class EasyWechat
         $app->setCache($container->get(CacheInterface::class));
         // 请求对象
         $app->setRequest($container->get(ServerRequestInterface::class));
-        // 客户端
-        $app->setClient($container->get(ClientFactory::class)
-            ->create($container->get(ConfigInterface::class)
-                ->get('wechat.http_client', [])));
 
         return $app;
     }
@@ -98,10 +93,6 @@ class EasyWechat
         $app->setCache($container->get(CacheInterface::class));
         // 请求对象
         $app->setRequest($container->get(ServerRequestInterface::class));
-        // 客户端
-        $app->setClient($container->get(ClientFactory::class)
-            ->create($container->get(ConfigInterface::class)
-                ->get('wechat.http_client', [])));
 
         return $app;
     }
@@ -124,10 +115,6 @@ class EasyWechat
         $app->setCache($container->get(CacheInterface::class));
         // 请求对象
         $app->setRequest($container->get(ServerRequestInterface::class));
-        // 客户端
-        $app->setClient($container->get(ClientFactory::class)
-            ->create($container->get(ConfigInterface::class)
-                ->get('wechat.http_client', [])));
 
         return $app;
     }
@@ -150,10 +137,6 @@ class EasyWechat
         $app->setCache($container->get(CacheInterface::class));
         // 请求对象
         $app->setRequest($container->get(ServerRequestInterface::class));
-        // 客户端
-        $app->setClient($container->get(ClientFactory::class)
-            ->create($container->get(ConfigInterface::class)
-                ->get('wechat.http_client', [])));
 
         return $app;
     }
@@ -174,10 +157,6 @@ class EasyWechat
         $app = new PayApplication($config);
         // 请求对象
         $app->setRequest($container->get(ServerRequestInterface::class));
-        // 客户端
-        $app->setClient($container->get(ClientFactory::class)
-            ->create($container->get(ConfigInterface::class)
-                ->get('wechat.http_client', [])));
 
         return $app;
     }
