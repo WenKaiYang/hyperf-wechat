@@ -39,8 +39,8 @@ class Factory
     protected array $configMap = [
         'officialAccount' => 'official_account',
         'work' => 'work',
-        'miniProgram' => 'mini_program',
-        'payment' => 'payment',
+        'miniApp' => 'mini_app',
+        'pay' => 'pay',
         'openPlatform' => 'open_platform',
         'openWork' => 'open_work',
     ];

@@ -82,9 +82,9 @@ class WeChatController extends AbstractController
   use \Ella123\HyperfWechat\EasyWechat;
   $officialAccount = EasyWechat::officialAccount(); // 公众号
   $work = EasyWechat::work(); // 企业微信
-  $payment = EasyWechat::pay(); // 微信支付
+  $pay = EasyWechat::pay(); // 微信支付
   $openPlatform = EasyWechat::openPlatform(); // 开放平台
-  $miniProgram = EasyWechat::miniApp(); // 小程序
+  $miniApp = EasyWechat::miniApp(); // 小程序
   
   // 均支持传入配置账号名称以及配置
   EasyWeChat::officialAccount('foo',[]); // `foo` 为配置文件中的名称，默认为 `default`。`[]` 可覆盖账号配置
