@@ -64,7 +64,7 @@ class EasyWechat
         $container = ApplicationContext::getContainer();
         // 配置
         $config = array_merge($container->get(ConfigInterface::class)
-            ->get('wechat.official_account.' . $name, []), $config);
+            ->get('wechat.open_platform.' . $name, []), $config);
         // 实例化
         $app = new OpenPlatformApplication($config);
         // 设置缓存
@@ -86,7 +86,7 @@ class EasyWechat
         $container = ApplicationContext::getContainer();
         // 配置
         $config = array_merge($container->get(ConfigInterface::class)
-            ->get('wechat.official_account.' . $name, []), $config);
+            ->get('wechat.mini_app.' . $name, []), $config);
         // 实例化
         $app = new MiniAppApplication($config);
         // 设置缓存
@@ -108,7 +108,7 @@ class EasyWechat
         $container = ApplicationContext::getContainer();
         // 配置
         $config = array_merge($container->get(ConfigInterface::class)
-            ->get('wechat.official_account.' . $name, []), $config);
+            ->get('wechat.work.' . $name, []), $config);
         // 实例化
         $app = new WorkApplication($config);
         // 设置缓存
@@ -130,7 +130,7 @@ class EasyWechat
         $container = ApplicationContext::getContainer();
         // 配置
         $config = array_merge($container->get(ConfigInterface::class)
-            ->get('wechat.official_account.' . $name, []), $config);
+            ->get('wechat.open_work.' . $name, []), $config);
         // 实例化
         $app = new OpenWorkApplication($config);
         // 设置缓存
@@ -152,7 +152,7 @@ class EasyWechat
         $container = ApplicationContext::getContainer();
         // 配置
         $config = array_merge($container->get(ConfigInterface::class)
-            ->get('wechat.official_account.' . $name, []), $config);
+            ->get('wechat.pay.' . $name, []), $config);
         // 实例化
         $app = new PayApplication($config);
         // 请求对象
