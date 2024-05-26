@@ -29,7 +29,7 @@ return [
             ],
         ],
     ],
-
+    // 公众号
     'official_account' => [
         'default' => [
             'app_id' => env('WECHAT_OFFICIAL_ACCOUNT_APPID', ''),
