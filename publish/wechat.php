@@ -11,11 +11,11 @@ declare(strict_types=1);
  */
 use function Hyperf\Support\env;
 
+/**
+ * 参考 EasyWechat 官方文档.
+ * @see https://easywechat.com/6.x/
+ */
 return [
-    // httpClient
-    'http_client' => [
-    ],
-
     // 公众号
     'official_account' => [
         'default' => [
@@ -66,8 +66,6 @@ return [
     // 企业开放平台
     'open_work' => [
         'default' => [
-            // 参考EasyWechat官方文档
-            // https://easywechat.com/6.x/
         ],
     ],
 ];
