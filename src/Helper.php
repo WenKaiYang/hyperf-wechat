@@ -22,7 +22,8 @@ class Helper
     public static function Response(Response $response)
     {
         $psrResponse = Context::get(PsrResponseInterface::class);
-        $psrResponse = $psrResponse->withBody(new SwooleStream($response->getContent()))->withStatus($response->getStatusCode());
+        $psrResponse = $psrResponse->withBody(new SwooleStream($response->getContent()))
+            ->withStatus($response->getStatusCode());
         foreach ($response->headers->all() as $key => $item) {
             $psrResponse = $psrResponse->withHeader($key, $item);
         }

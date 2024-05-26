@@ -4,9 +4,10 @@
     "license": "MIT",
     "keywords": [
         "php",
-        "hyperf"
+        "hyperf",
+        "hyperfv3.1"
     ],
-    "description": "",
+    "description": "Wechat SDK For Hyperf ",
     "autoload": {
         "psr-4": {
             "Ella123\\HyperfWechat\\": "src/"
