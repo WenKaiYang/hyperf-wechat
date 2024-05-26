@@ -27,6 +27,14 @@ class ConfigProvider
                     ],
                 ],
             ],
+            'publish' => [
+                [
+                    'id' => 'config',
+                    'description' => 'The config for wechat.',
+                    'source' => __DIR__ . '/../publish/wechat.php',
+                    'destination' => BASE_PATH . '/config/autoload/wechat.php',
+                ],
+            ],
         ];
     }
 }
