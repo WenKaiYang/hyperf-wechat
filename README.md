@@ -41,12 +41,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use EasyWeChat\Kernel\Exceptions\BadRequestException;
-use EasyWeChat\Kernel\Exceptions\InvalidArgumentException;
-use EasyWeChat\Kernel\Exceptions\InvalidConfigException;
-use Ella123\HyperfWechat\EasyWechat;
-use Ella123\HyperfWechat\Helper;
-use ReflectionException;
+use EasyWeChat\Kernel\Exceptions\BadRequestException;use EasyWeChat\Kernel\Exceptions\InvalidArgumentException;use EasyWeChat\Kernel\Exceptions\InvalidConfigException;use Ella123\HyperfWechat\EasyWechat;use ReflectionException;
 
 class WeChatController extends AbstractController
 {
@@ -66,8 +61,8 @@ class WeChatController extends AbstractController
         $app->server->push(function ($message) {
             return "欢迎关注 EasyWechat！";
         });
-        // 一定要用Helper::Response去转换
-        return Helper::Response($app->server->serve());
+        
+        return $app->server->serve();
     }
 }
 ```
