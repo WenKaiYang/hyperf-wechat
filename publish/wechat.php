@@ -1,16 +1,14 @@
 <?php
 
 declare(strict_types=1);
-
 /**
  * This file is part of Hyperf.
  *
  * @link     https://www.hyperf.io
- * @document https://doc.hyperf.io
+ * @document https://hyperf.wiki
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-
 use function Hyperf\Support\env;
 
 return [
@@ -44,26 +42,26 @@ return [
             'aes_key' => env('WECHAT_OFFICIAL_ACCOUNT_AES_KEY', ''),
         ],
     ],
-    //第三方开发平台
-    //'open_platform'    => [
+    // 第三方开发平台
+    // 'open_platform'    => [
     //    'default' => [
     //        'app_id'  => env('WECHAT_OPEN_PLATFORM_APPID', ''),
     //        'secret'  => env('WECHAT_OPEN_PLATFORM_SECRET', ''),
     //        'token'   => env('WECHAT_OPEN_PLATFORM_TOKEN', ''),
     //        'aes_key' => env('WECHAT_OPEN_PLATFORM_AES_KEY', ''),
     //    ],
-    //],
-    //小程序
-    //'mini_program'     => [
+    // ],
+    // 小程序
+    // 'mini_program'     => [
     //    'default' => [
     //        'app_id'  => env('WECHAT_MINI_PROGRAM_APPID', ''),
     //        'secret'  => env('WECHAT_MINI_PROGRAM_SECRET', ''),
     //        'token'   => env('WECHAT_MINI_PROGRAM_TOKEN', ''),
     //        'aes_key' => env('WECHAT_MINI_PROGRAM_AES_KEY', ''),
     //    ],
-    //],
-    //支付
-    //'payment'          => [
+    // ],
+    // 支付
+    // 'payment'          => [
     //    'default' => [
     //        'sandbox'    => env('WECHAT_PAYMENT_SANDBOX', false),
     //        'app_id'     => env('WECHAT_PAYMENT_APPID', ''),
@@ -74,21 +72,21 @@ return [
     //        'notify_url' => 'http://example.com/payments/wechat-notify',                           // 默认支付结果通知地址
     //    ],
     //    // ...
-    //],
-    //企业微信
-    //'work'             => [
+    // ],
+    // 企业微信
+    // 'work'             => [
     //    'default' => [
     //        'corp_id'  => 'xxxxxxxxxxxxxxxxx',
     //        'agent_id' => 100020,
     //        'secret'   => env('WECHAT_WORK_AGENT_CONTACTS_SECRET', ''),
     //        //...
     //    ],
-    //],
-    //企业开放平台
-    //'open_work'             => [
+    // ],
+    // 企业开放平台
+    // 'open_work'             => [
     //    'default' => [
     //        //参考EasyWechat官方文档
     //        //https://www.easywechat.com/docs/4.1/open-work/index
     //    ],
-    //],
+    // ],
 ];
