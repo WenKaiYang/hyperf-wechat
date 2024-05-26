@@ -20,6 +20,7 @@ use EasyWeChat\OpenWork\Application as OpenWorkApplication;
 use EasyWeChat\Pay\Application as PayApplication;
 use EasyWeChat\Work\Application as WorkApplication;
 use Hyperf\Context\ApplicationContext;
+use Hyperf\Context\Context;
 use Hyperf\Contract\ConfigInterface;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
@@ -47,8 +48,8 @@ class EasyWechat
         $app = new OfficialAccountApplication($config);
         // 设置缓存
         $app->setCache($container->get(CacheInterface::class));
-        // 请求对象
-        $app->setRequest($container->get(ServerRequestInterface::class));
+        // 请求对象(当前上下文)
+        $app->setRequest(Context::get(ServerRequestInterface::class));
 
         return $app;
     }
@@ -69,8 +70,8 @@ class EasyWechat
         $app = new OpenPlatformApplication($config);
         // 设置缓存
         $app->setCache($container->get(CacheInterface::class));
-        // 请求对象
-        $app->setRequest($container->get(ServerRequestInterface::class));
+        // 请求对象(当前上下文)
+        $app->setRequest(Context::get(ServerRequestInterface::class));
 
         return $app;
     }
@@ -91,8 +92,8 @@ class EasyWechat
         $app = new MiniAppApplication($config);
         // 设置缓存
         $app->setCache($container->get(CacheInterface::class));
-        // 请求对象
-        $app->setRequest($container->get(ServerRequestInterface::class));
+        // 请求对象(当前上下文)
+        $app->setRequest(Context::get(ServerRequestInterface::class));
 
         return $app;
     }
@@ -113,8 +114,8 @@ class EasyWechat
         $app = new WorkApplication($config);
         // 设置缓存
         $app->setCache($container->get(CacheInterface::class));
-        // 请求对象
-        $app->setRequest($container->get(ServerRequestInterface::class));
+        // 请求对象(当前上下文)
+        $app->setRequest(Context::get(ServerRequestInterface::class));
 
         return $app;
     }
@@ -135,8 +136,8 @@ class EasyWechat
         $app = new OpenWorkApplication($config);
         // 设置缓存
         $app->setCache($container->get(CacheInterface::class));
-        // 请求对象
-        $app->setRequest($container->get(ServerRequestInterface::class));
+        // 请求对象(当前上下文)
+        $app->setRequest(Context::get(ServerRequestInterface::class));
 
         return $app;
     }
@@ -155,8 +156,8 @@ class EasyWechat
             ->get('wechat.pay.' . $name, []), $config);
         // 实例化
         $app = new PayApplication($config);
-        // 请求对象
-        $app->setRequest($container->get(ServerRequestInterface::class));
+        // 请求对象(当前上下文)
+        $app->setRequest(Context::get(ServerRequestInterface::class));
 
         return $app;
     }
