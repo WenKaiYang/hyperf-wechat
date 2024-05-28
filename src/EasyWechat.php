@@ -26,7 +26,6 @@ use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\SimpleCache\CacheInterface;
-
 use function Hyperf\Support\make;
 
 /**
@@ -51,9 +50,7 @@ class EasyWechat
         // 设置缓存
         $app->setCache($container->get(CacheInterface::class));
         // 请求对象(当前上下文)
-        $app->setRequest(Context::has(ServerRequestInterface::class)
-            ? Context::get(ServerRequestInterface::class)
-            : Context::set(ServerRequestInterface::class, make(ServerRequestInterface::class)));
+        $app->setRequest(Context::getOrSet(ServerRequestInterface::class, make(ServerRequestInterface::class)));
 
         return $app;
     }
@@ -75,9 +72,7 @@ class EasyWechat
         // 设置缓存
         $app->setCache($container->get(CacheInterface::class));
         // 请求对象(当前上下文)
-        $app->setRequest(Context::has(ServerRequestInterface::class)
-            ? Context::get(ServerRequestInterface::class)
-            : Context::set(ServerRequestInterface::class, make(ServerRequestInterface::class)));
+        $app->setRequest(Context::getOrSet(ServerRequestInterface::class, make(ServerRequestInterface::class)));
 
         return $app;
     }
@@ -99,9 +94,7 @@ class EasyWechat
         // 设置缓存
         $app->setCache($container->get(CacheInterface::class));
         // 请求对象(当前上下文)
-        $app->setRequest(Context::has(ServerRequestInterface::class)
-            ? Context::get(ServerRequestInterface::class)
-            : Context::set(ServerRequestInterface::class, make(ServerRequestInterface::class)));
+        $app->setRequest(Context::getOrSet(ServerRequestInterface::class, make(ServerRequestInterface::class)));
 
         return $app;
     }
@@ -123,9 +116,7 @@ class EasyWechat
         // 设置缓存
         $app->setCache($container->get(CacheInterface::class));
         // 请求对象(当前上下文)
-        $app->setRequest(Context::has(ServerRequestInterface::class)
-            ? Context::get(ServerRequestInterface::class)
-            : Context::set(ServerRequestInterface::class, make(ServerRequestInterface::class)));
+        $app->setRequest(Context::getOrSet(ServerRequestInterface::class, make(ServerRequestInterface::class)));
 
         return $app;
     }
@@ -147,9 +138,7 @@ class EasyWechat
         // 设置缓存
         $app->setCache($container->get(CacheInterface::class));
         // 请求对象(当前上下文)
-        $app->setRequest(Context::has(ServerRequestInterface::class)
-            ? Context::get(ServerRequestInterface::class)
-            : Context::set(ServerRequestInterface::class, make(ServerRequestInterface::class)));
+        $app->setRequest(Context::getOrSet(ServerRequestInterface::class, make(ServerRequestInterface::class)));
 
         return $app;
     }
@@ -169,9 +158,7 @@ class EasyWechat
         // 实例化
         $app = new PayApplication($config);
         // 请求对象(当前上下文)
-        $app->setRequest(Context::has(ServerRequestInterface::class)
-            ? Context::get(ServerRequestInterface::class)
-            : Context::set(ServerRequestInterface::class, make(ServerRequestInterface::class)));
+        $app->setRequest(Context::getOrSet(ServerRequestInterface::class, make(ServerRequestInterface::class)));
 
         return $app;
     }
