@@ -52,7 +52,7 @@ class EasyWechat
         // 请求对象(当前上下文)
         $app->setRequest(Context::has(ServerRequestInterface::class)
             ? Context::get(ServerRequestInterface::class)
-            : make(ServerRequestInterface::class));
+            : Context::set(ServerRequestInterface::class, make(ServerRequestInterface::class)));
 
         return $app;
     }
@@ -76,7 +76,7 @@ class EasyWechat
         // 请求对象(当前上下文)
         $app->setRequest(Context::has(ServerRequestInterface::class)
             ? Context::get(ServerRequestInterface::class)
-            : make(ServerRequestInterface::class));
+            : Context::set(ServerRequestInterface::class, make(ServerRequestInterface::class)));
 
         return $app;
     }
@@ -100,7 +100,7 @@ class EasyWechat
         // 请求对象(当前上下文)
         $app->setRequest(Context::has(ServerRequestInterface::class)
             ? Context::get(ServerRequestInterface::class)
-            : make(ServerRequestInterface::class));
+            : Context::set(ServerRequestInterface::class, make(ServerRequestInterface::class)));
 
         return $app;
     }
@@ -124,7 +124,7 @@ class EasyWechat
         // 请求对象(当前上下文)
         $app->setRequest(Context::has(ServerRequestInterface::class)
             ? Context::get(ServerRequestInterface::class)
-            : make(ServerRequestInterface::class));
+            : Context::set(ServerRequestInterface::class, make(ServerRequestInterface::class)));
 
         return $app;
     }
@@ -148,7 +148,7 @@ class EasyWechat
         // 请求对象(当前上下文)
         $app->setRequest(Context::has(ServerRequestInterface::class)
             ? Context::get(ServerRequestInterface::class)
-            : make(ServerRequestInterface::class));
+            : Context::set(ServerRequestInterface::class, make(ServerRequestInterface::class)));
 
         return $app;
     }
@@ -170,7 +170,7 @@ class EasyWechat
         // 请求对象(当前上下文)
         $app->setRequest(Context::has(ServerRequestInterface::class)
             ? Context::get(ServerRequestInterface::class)
-            : make(ServerRequestInterface::class));
+            : Context::set(ServerRequestInterface::class, make(ServerRequestInterface::class)));
 
         return $app;
     }
