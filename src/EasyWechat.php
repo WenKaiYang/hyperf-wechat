@@ -50,7 +50,9 @@ class EasyWechat
         // 设置缓存
         $app->setCache($container->get(CacheInterface::class));
         // 请求对象(当前上下文)
-        $app->setRequest(Context::getOrSet(ServerRequestInterface::class, make(ServerRequestInterface::class)));
+        if ($request = Context::get(ServerRequestInterface::class)) {
+            $app->setRequest($request);
+        }
 
         return $app;
     }
@@ -72,7 +74,9 @@ class EasyWechat
         // 设置缓存
         $app->setCache($container->get(CacheInterface::class));
         // 请求对象(当前上下文)
-        $app->setRequest(Context::getOrSet(ServerRequestInterface::class, make(ServerRequestInterface::class)));
+        if ($request = Context::get(ServerRequestInterface::class)) {
+            $app->setRequest($request);
+        }
 
         return $app;
     }
@@ -94,7 +98,9 @@ class EasyWechat
         // 设置缓存
         $app->setCache($container->get(CacheInterface::class));
         // 请求对象(当前上下文)
-        $app->setRequest(Context::getOrSet(ServerRequestInterface::class, make(ServerRequestInterface::class)));
+        if ($request = Context::get(ServerRequestInterface::class)) {
+            $app->setRequest($request);
+        }
 
         return $app;
     }
@@ -116,7 +122,9 @@ class EasyWechat
         // 设置缓存
         $app->setCache($container->get(CacheInterface::class));
         // 请求对象(当前上下文)
-        $app->setRequest(Context::getOrSet(ServerRequestInterface::class, make(ServerRequestInterface::class)));
+        if ($request = Context::get(ServerRequestInterface::class)) {
+            $app->setRequest($request);
+        }
 
         return $app;
     }
@@ -138,7 +146,9 @@ class EasyWechat
         // 设置缓存
         $app->setCache($container->get(CacheInterface::class));
         // 请求对象(当前上下文)
-        $app->setRequest(Context::getOrSet(ServerRequestInterface::class, make(ServerRequestInterface::class)));
+        if ($request = Context::get(ServerRequestInterface::class)) {
+            $app->setRequest($request);
+        }
 
         return $app;
     }
@@ -158,7 +168,9 @@ class EasyWechat
         // 实例化
         $app = new PayApplication($config);
         // 请求对象(当前上下文)
-        $app->setRequest(Context::getOrSet(ServerRequestInterface::class, make(ServerRequestInterface::class)));
+        if ($request = Context::get(ServerRequestInterface::class)) {
+            $app->setRequest($request);
+        }
 
         return $app;
     }
