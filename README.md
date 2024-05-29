@@ -1,6 +1,8 @@
-# hyperf-wechat
+# ella123/hyperf-wechat
 
 微信 SDK for Hyperf， 基于 overtrue/wechat
+
+> 注意：组件依赖 `Context` 中的 `Request`
 
 ## 安装
 
