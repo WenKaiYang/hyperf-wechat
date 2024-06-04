@@ -37,22 +37,22 @@ return [
     // 小程序
     'mini_app' => [
         'default' => [
-            'app_id' => env('WECHAT_MINI_PROGRAM_APPID', ''),
-            'secret' => env('WECHAT_MINI_PROGRAM_SECRET', ''),
-            'token' => env('WECHAT_MINI_PROGRAM_TOKEN', ''),
-            'aes_key' => env('WECHAT_MINI_PROGRAM_AES_KEY', ''),
+            'app_id' => env('WECHAT_MINI_APP_APPID', ''),
+            'secret' => env('WECHAT_MINI_APP_SECRET', ''),
+            'token' => env('WECHAT_MINI_APP_TOKEN', ''),
+            'aes_key' => env('WECHAT_MINI_APP_AES_KEY', ''),
         ],
     ],
     // 支付
     'pay' => [
         'default' => [
-            'sandbox' => env('WECHAT_PAYMENT_SANDBOX', false),
-            'app_id' => env('WECHAT_PAYMENT_APPID', ''),
-            'mch_id' => env('WECHAT_PAYMENT_MCH_ID', ''),
-            'key' => env('WECHAT_PAYMENT_KEY', ''),
-            'cert_path' => env('WECHAT_PAYMENT_CERT_PATH', BASE_PATH . '/storage/pay/cert.pem'),    // XXX: 绝对路径！！！！
-            'key_path' => env('WECHAT_PAYMENT_KEY_PATH', BASE_PATH . '/storage/pay/key.pem'),      // XXX: 绝对路径！！！！
-            'notify_url' => env('WECHAT_PAYMENT_NOTIFY', 'https://example.com/wechat/pay/notify'),                             // 默认支付结果通知地址
+            'sandbox' => env('WECHAT_PAY_SANDBOX', false),
+            'app_id' => env('WECHAT_PAY_APPID', ''),
+            'mch_id' => env('WECHAT_PAY_MCH_ID', ''),
+            'key' => env('WECHAT_PAY_KEY', ''),
+            'cert_path' => env('WECHAT_PAY_CERT_PATH', BASE_PATH . '/storage/pay/cert.pem'),    // XXX: 绝对路径！！！！
+            'key_path' => env('WECHAT_PAY_KEY_PATH', BASE_PATH . '/storage/pay/key.pem'),      // XXX: 绝对路径！！！！
+            'notify_url' => env('WECHAT_PAY_NOTIFY', 'https://example.com/wechat/pay/notify'),                             // 默认支付结果通知地址
         ],
     ],
     // 企业微信
